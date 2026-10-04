@@ -1,0 +1,20 @@
+{% extends "layouts.master" %}
+{% block content %}
+<section class="ft-hero">
+  <div class="ft-container ft-hero-grid">
+    <div class="ft-hero-copy">
+      <span class="ft-eyebrow">FAKHAMA TOUCH</span>
+      <h1>الوقت… <em>بلمسة فخامة</em></h1>
+      <p>ساعات جدارية بتصاميم أنيقة تضيف حضورًا مختلفًا لجدارك، وتفاصيل مختارة لمن يحب الفخامة الهادئة.</p>
+      <div class="ft-hero-actions"><a class="ft-btn ft-btn-gold" href="{{ store.url ~ '/products' }}">اكتشف المجموعة</a><a class="ft-btn ft-btn-light" href="{{ store.url ~ '/offers' }}">شوف العروض</a></div>
+    </div>
+    <div class="ft-hero-art"><div class="ft-clock-orbit"><div class="ft-clock"><span class="ft-clock-mark m1">12</span><span class="ft-clock-mark m2">3</span><span class="ft-clock-mark m3">6</span><span class="ft-clock-mark m4">9</span><span class="ft-hand ft-hand-h"></span><span class="ft-hand ft-hand-m"></span><span class="ft-clock-center"></span></div></div></div>
+  </div>
+</section>
+<section class="ft-trust"><div class="ft-container ft-trust-grid"><div><strong>تصاميم تلفت النظر</strong><span>تفاصيل تصنع الفرق</span></div><div><strong>شحن لجميع المناطق</strong><span>نوصل طلبك لبابك</span></div><div><strong>دفع آمن</strong><span>خيارات دفع موثوقة</span></div><div><strong>دعم سريع</strong><span>نخدمك بكل اهتمام</span></div></div></section>
+<section class="ft-section"><div class="ft-container"><div class="ft-section-head"><div><span class="ft-eyebrow">THE COLLECTION</span><h2>أحدث ساعاتنا</h2></div><a href="{{ store.url ~ '/products' }}">عرض الكل <i class="sicon-arrow-left"></i></a></div><salla-products-list source="latest" limit="8"></salla-products-list></div></section>
+<section class="ft-editorial"><div class="ft-container ft-editorial-grid"><div><span class="ft-eyebrow">YOUR WALL, YOUR STYLE</span><h2>جدارك يستاهل أكثر من ساعة.</h2><p>اختر تصميمًا ينسجم مع أثاثك ويعطي المكان شخصية واضحة بدون مبالغة.</p><a class="ft-text-link" href="{{ store.url ~ '/products' }}">شاهد التصاميم <i class="sicon-arrow-left"></i></a></div><div class="ft-editorial-card"><span>فخامة</span><b>تبدأ من التفاصيل.</b></div></div></section>
+<section class="ft-section ft-section-soft"><div class="ft-container"><div class="ft-section-head"><div><span class="ft-eyebrow">SHOP BY MOOD</span><h2>اختيارات تناسب ذوقك</h2></div></div><div class="ft-moods"><a href="{{ store.url ~ '/products' }}"><span>01</span><b>فخامة هادئة</b><small>ألوان راقية وتفاصيل ناعمة</small></a><a href="{{ store.url ~ '/products' }}"><span>02</span><b>ستايل عصري</b><small>خطوط نظيفة وحضور قوي</small></a><a href="{{ store.url ~ '/products' }}"><span>03</span><b>لمسة دافئة</b><small>تصاميم تكمل أجواء المنزل</small></a></div></div></section>
+<section class="ft-newsletter"><div class="ft-container"><span class="ft-eyebrow">STAY CLOSE</span><h2>خلك أول من يعرف عن الجديد</h2><p>تابعنا للعروض والتصاميم الجديدة.</p><salla-social></salla-social></div></section>
+{% endblock %}
+{% block scripts %}<script defer src="{{ 'home.js'|asset }}"></script>{% endblock %}

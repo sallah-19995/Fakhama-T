@@ -1,0 +1,8 @@
+{% extends "layouts.master" %}
+{% block content %}
+<div class="ft-page-head"><div class="ft-container"><salla-breadcrumb></salla-breadcrumb><span class="ft-eyebrow">COLLECTION</span><h1>{{ page.title|raw }}</h1></div></div>
+<div class="ft-container ft-products-page">
+  {% if filters %}<salla-filters id="filters-menu"></salla-filters>{% endif %}
+  <div class="ft-products-main"><salla-products-list source="{{ page.slug }}" source-value="{{ page.id }}" limit="24"></salla-products-list></div>
+</div>
+{% endblock %}

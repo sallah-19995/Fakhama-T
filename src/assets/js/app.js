@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{const b=document.querySelector('.ft-mobile-menu');const n=document.querySelector('.ft-nav');if(b&&n)b.addEventListener('click',()=>n.classList.toggle('is-open'));});

@@ -1,0 +1,19 @@
+<header class="ft-header" data-testid="store-header">
+  {% if theme.settings.get('show_offer_bar', true) %}
+  <div class="ft-offer-bar"><span>{{ theme.settings.get('offer_text', 'خصومات فخامة تت — الكمية محدودة') }}</span><a href="{{ store.url ~ '/offers' }}">تسوق الآن</a></div>
+  {% endif %}
+  <div class="ft-header-main">
+    <div class="ft-container ft-header-inner">
+      <button class="ft-mobile-menu" type="button" aria-label="القائمة"><i class="sicon-menu"></i></button>
+      <a class="ft-logo" href="{{ store.url }}" aria-label="{{ store.name }}">
+        <img src="{{ store.logo|cdn(220) }}" alt="{{ store.name }}">
+      </a>
+      <nav class="ft-nav"><custom-main-menu></custom-main-menu></nav>
+      <div class="ft-actions">
+        <button class="ft-icon-btn" type="button" onclick="document.querySelector('salla-search').open()" aria-label="بحث"><i class="sicon-search"></i></button>
+        <salla-user-menu avatar-only show-header show-trigger></salla-user-menu>
+        <salla-cart-summary><i slot="icon" class="sicon-shopping-bag"></i></salla-cart-summary>
+      </div>
+    </div>
+  </div>
+</header>

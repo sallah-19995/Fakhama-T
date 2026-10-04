@@ -1,0 +1,26 @@
+{% extends "layouts.master" %}
+{% block content %}
+<div class="ft-container ft-cart-page">
+  <salla-breadcrumb></salla-breadcrumb>
+  <span class="ft-eyebrow">YOUR BAG</span><h1>سلة المشتريات</h1>
+  <salla-conditional-offer></salla-conditional-offer>
+  <div class="ft-cart-layout">
+    <div class="ft-cart-items">
+      {% for item in cart.items %}
+        <form onchange="salla.form.onChange('cart.updateItem', event)" id="item-{{ item.id }}" class="ft-cart-item">
+          <input type="hidden" name="id" value="{{ item.id }}">
+          <a href="{{ item.url }}"><img src="{{ item.product_image }}" alt="{{ item.product_name }}"></a>
+          <div class="ft-cart-item-info"><a href="{{ item.url }}"><h2>{{ item.product_name }}</h2></a><span>{{ item.price|money }}</span>{% include 'pages.partials.product.options' with {product:item} %}</div>
+          <salla-quantity-input cart-item-id="{{ item.id }}" max="{{ item.max_quantity }}" value="{{ item.quantity }}" name="quantity"></salla-quantity-input>
+          <strong>{{ item.total|money }}</strong>
+          <salla-button type="button" shape="icon" color="danger" onclick="salla.cart.deleteItem('{{ item.id }}').then(()=>document.querySelector('#item-{{ item.id }}').remove())"><i class="sicon-cancel"></i></salla-button>
+        </form>
+      {% else %}
+        <div class="ft-cart-empty"><i class="sicon-shopping-bag"></i><h2>السلة فاضية</h2><a class="ft-btn ft-btn-gold" href="{{ link('/') }}">ابدأ التسوق</a></div>
+      {% endfor %}
+    </div>
+    {% if cart.items|length %}<aside class="ft-cart-summary"><salla-cart-summary-card></salla-cart-summary-card></aside>{% endif %}
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}<script defer src="{{ 'checkout.js'|asset }}"></script>{% endblock %}

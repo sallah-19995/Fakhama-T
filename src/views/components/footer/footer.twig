@@ -1,0 +1,13 @@
+<footer class="ft-footer">
+  <div class="ft-container ft-footer-grid">
+    <div class="ft-footer-brand">
+      <img class="ft-footer-logo" src="{{ store.logo|cdn(220) }}" alt="{{ store.name }}">
+      <p>فخامة تت — لمسة فخامة تغيّر تفاصيل المكان. ساعات جدارية ومنتجات ديكور مختارة بعناية لتكمل أناقة منزلك.</p>
+      <salla-social></salla-social>
+    </div>
+    <div><h3>روابط مهمة</h3><salla-menu source="footer"></salla-menu></div>
+    <div><h3>خدمة العملاء</h3><salla-contacts></salla-contacts></div>
+    <div><h3>الدفع الآمن</h3><salla-payments></salla-payments><salla-trust-badges></salla-trust-badges></div>
+  </div>
+  <div class="ft-footer-bottom"><div class="ft-container"><span>© {{ 'now'|date('Y') }} {{ store.name }} — جميع الحقوق محفوظة</span></div></div>
+</footer>

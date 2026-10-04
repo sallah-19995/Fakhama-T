@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "name": {"ar": "فخامة تت", "en": "Fakhama Touch"},
+  "theme_name": "Fakhama Touch",
+  "repository": "https://github.com/YOUR_USERNAME/fakhama-touch-theme",
+  "author_email": "support@fakhamatouch.sa",
+  "support_url": "https://fakhamatouch.sa",
+  "features": ["mega-menu", "fonts", "color", "breadcrumb", "filters"],
+  "settings": [
+    {"id":"header_is_sticky","type":"boolean","format":"switch","label":"تثبيت الهيدر","value":true,"selected":true},
+    {"id":"show_offer_bar","type":"boolean","format":"switch","label":"إظهار شريط العرض العلوي","value":true,"selected":true},
+    {"id":"offer_text","type":"string","format":"text","multilanguage":true,"label":"نص العرض العلوي","value":"خصومات فخامة تت — الكمية محدودة"},
+    {"id":"product_index_show_breadcrumbs","type":"boolean","format":"switch","label":"إظهار مسار التنقل","value":true,"selected":true},
+    {"id":"product_show_breadcrumbs","type":"boolean","format":"switch","label":"إظهار مسار التنقل في المنتج","value":true,"selected":true},
+    {"id":"sticky_add_to_cart","type":"boolean","format":"switch","label":"تثبيت زر الإضافة للسلة على الجوال","value":true,"selected":true},
+    {"id":"show_tags","type":"boolean","format":"switch","label":"إظهار وسوم المنتجات","value":true,"selected":true}
+  ],
+  "components": []
+}

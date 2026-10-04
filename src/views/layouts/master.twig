@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="{{ language.code }}" dir="{{ theme.is_rtl ? 'rtl' : 'ltr' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11100e">
+  <script defer src="{{ 'app.js'|asset }}"></script>
+  <script defer src="{{ 'product.js'|asset }}"></script>
+  {% hook 'head:start' %}{% hook head %}{% block head %}{% endblock %}
+  <link rel="stylesheet" href="{{ 'app.css'|asset }}">
+  <link rel="stylesheet" href="{{ theme.font.path|cdn }}">
+  {% hook 'head:end' %}
+</head>
+<body id="app" class="fakhama-theme">
+  {% hook 'body:start' %}
+  {% component 'header.header' %}
+  <main id="main-content">{% block content %}{% endblock %}</main>
+  {% component 'footer.footer' %}
+  {% hook 'body:end' %}
+  <salla-offer-modal></salla-offer-modal>
+  <salla-search></salla-search>
+  <salla-login-modal></salla-login-modal>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "layouts.master" %}
+{% block content %}
+<div class="ft-container ft-product-page">
+  {% if theme.settings.get('product_show_breadcrumbs', true) %}<salla-breadcrumb></salla-breadcrumb>{% endif %}
+  <div class="ft-product-grid">
+    <div class="ft-product-gallery"><salla-slider type="thumbs" show-thumbs-controls="false" auto-height><div slot="items">{% for image in product.images %}<div class="swiper-slide"><img src="{{ image.url }}" alt="{{ image.alt|default(product.name) }}"></div>{% endfor %}</div>{% if product.images|length > 1 %}<div slot="thumbs">{% for image in product.images %}<div class="slide--one-fourth"><img src="{{ image.url }}" alt="{{ image.alt|default(product.name) }}"></div>{% endfor %}</div>{% endif %}</salla-slider></div>
+    <div class="ft-product-info">
+      {% if product.brand.name %}<a class="ft-product-brand" href="{{ product.brand.url }}">{{ product.brand.name }}</a>{% endif %}
+      <h1>{{ product.name }}</h1>
+      {% if product.subtitle %}<p class="ft-product-subtitle">{{ product.subtitle }}</p>{% endif %}
+      {% if product.rating %}<salla-rating-stars value="{{ product.rating.stars }}" reviews="{{ product.rating.count }}"></salla-rating-stars>{% endif %}
+      <div class="ft-product-price">{% if product.is_on_sale %}<strong>{{ product.sale_price|money }}</strong><del>{{ product.regular_price|money }}</del>{% else %}<strong>{{ product.price|money }}</strong>{% endif %}</div>
+      <div class="ft-product-description">{{ product.description|raw }}</div>
+      <form class="ft-product-form" method="post" onsubmit="return salla.form.onSubmit('cart.addItem', event)"><input type="hidden" name="id" value="{{ product.id }}">{% include 'pages.partials.product.options' %}<salla-quantity-input name="quantity" value="1" max="{{ product.max_quantity }}"></salla-quantity-input><salla-add-product-button product-id="{{ product.id }}" product-status="{{ product.status }}" product-type="{{ product.type }}" amount="{{ product.base_currency_price }}" width="wide" type="submit">{{ product.add_to_cart_label }}</salla-add-product-button></form>
+      <div class="ft-product-meta"><span><i class="sicon-shield-check"></i> دفع آمن</span><span><i class="sicon-truck"></i> شحن لجميع المناطق</span><span><i class="sicon-refresh"></i> خدمة عملاء تهتم بطلبك</span></div>
+    </div>
+  </div>
+  {% if store.settings.rating.show_on_product %}<salla-comments item-id="{{ product.id }}" type="product"></salla-comments>{% endif %}
+  <div class="ft-related"><div class="ft-section-head"><div><span class="ft-eyebrow">YOU MAY ALSO LIKE</span><h2>منتجات قد تعجبك</h2></div></div><salla-products-list source="related" source-value="{{ product.id }}" limit="4"></salla-products-list></div>
+</div>
+{% endblock %}

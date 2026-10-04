@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "name": {"ar": "فخامة تت", "en": "Fakhama Touch"},
   "theme_name": "Fakhama Touch",
-  "repository": "https://github.com/YOUR_USERNAME/fakhama-touch-theme",
+  "repository": "https://github.com/sallah-19995/fakhama-touch-theme",
   "author_email": "support@fakhamatouch.sa",
   "support_url": "https://fakhamatouch.sa",
   "features": ["mega-menu", "fonts", "color", "breadcrumb", "filters"],
